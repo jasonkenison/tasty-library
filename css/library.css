@@ -1,0 +1,19 @@
+/**
+ * default library styles, theme independent
+ * site requires a theme.*.css file
+ */
+
+body {
+	background:#ccc;
+	color:#111;
+	-webkit-font-smoothing:subpixel-antialiased;
+	font-weight:300;
+	font-size:13px;
+	margin:0px;
+	padding:0px;
+}
+
+a, a:hover {
+	color:#111;
+	text-decoration:none;
+}

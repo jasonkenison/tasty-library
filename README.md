@@ -9,3 +9,9 @@ Includes a single data/library.json file defining all shelves and data within th
 * JSON data in /data/ (sample data from Delicious Library XML export)
 * Sort by list or search by title or creator
 * Browser tested in iPad, iPhone 5 and desktop browsers. Ideal viewing in iPhone 5
+
+leanModal v1.1 by Ray Stone
+http://finelysliced.com.au
+
+Lazy Load v1.8.5 by Mika Tuupola
+http://www.appelsiini.net/projects/lazyload

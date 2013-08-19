@@ -1,0 +1,285 @@
+/*
+ * theme.default.css
+ *
+ * simple theme with minimal images for mobile Safari
+ * any Google Web Fonts must be included in index.html
+ *
+ * Copyright 2013, Jason Kenison - http://jasonkenison.com/
+ * Released under the MIT Licence
+ * http://opensource.org/licenses/MIT
+ *
+ * Github:  https://github.com/jasonkenison/tasty-library
+ * Version: 0.1
+ */
+
+body {
+	background:rgba(142,142,147,0.9);
+	font-family:"Roboto Condensed", sans-serif;
+}
+
+/**
+ * header/filter bar
+ */
+div.filter {
+	background:rgba(0,0,0,0.8);
+	color:#fff;
+	height:36px;
+	padding-top:8px;
+	padding-bottom:0px;
+	position:fixed;
+    top:0;
+    width:100%;
+    z-index:10;
+	box-shadow:0px 0px 3px #000;
+}
+
+#searchNote {
+	font-weight:700;
+	font-size:16px;
+	text-align:left;
+	display:inline-block;
+	float:right;
+	margin-right:8px;
+	
+	display:none;
+}
+
+select {
+	display:block;
+	float:left;
+	margin-top:2px;
+	margin-left:6px;
+	border:0px;
+	background:#fff;
+	width:104px;
+	height:25px;
+	font-family:"Open Sans", sans-serif;
+	font-size:12px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow:0px 0px 2px #999;
+}
+
+input.searchBox {
+	display:block;
+	float:right;
+	margin-right:4px;
+	border:0px;
+	background:#fff;
+	padding:4px 6px;
+	width:186px;
+	font-family:"Open Sans", sans-serif;
+	font-size:12px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow:0px 0px 2px #999;	
+}
+
+div.error {
+	display:block;
+	margin:12px 0px;
+	font-size:14px;
+	font-weight:700;
+	text-align:center;
+	background:#CE0000; 
+	color:#fff;
+	padding:12px 0px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow:0px 0px 2px #000;
+}
+
+/**
+ * item listing
+ */
+#items {
+	padding:6px;
+	margin-top:28px;
+}
+
+.item {
+	display:block;
+	float:left;
+	min-width:308px;
+	min-height:150px;
+	width:auto;
+	background:#fff;
+	background-image: url("../images/item_bg_left.png"), url("../images/item_bg.png");
+	background-position: left top, left top;
+	background-repeat: repeat-y, repeat;
+	background-size: 106px 26px, 290px 36px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow:0px 0px 2px #666;
+	text-align:center;
+	margin-bottom:6px;
+	margin-right:6px;
+}
+
+.item .info {
+	display:block;
+	float:right;
+	width:175px;
+	text-align:left;
+	padding:8px 18px 0 0;
+}
+
+.item .info .title {
+	display:block;
+	font-weight:700;
+	text-align:left;
+}
+
+.item .info .creator {
+	display:block;
+	font-weight:400;
+	font-size:13px;
+	text-align:left;
+	color:#999;
+}
+
+.item .info .type {
+	display:block;
+	font-weight:400;
+	font-size:13px;
+	text-align:left;
+	color:#999;
+	margin-top:8px;
+}
+
+.item .info .type b {
+	color:#333;
+}
+
+.item .info .description {
+	display:block;
+	text-align:left;
+	padding-top:4px;
+	font-size:12px;
+}
+
+.item img {
+	display:block;
+	float:left;
+	width:100px;
+	padding:3px;
+	/*
+	background:#fff; 
+	border:#ccc;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow:0px 0px 2px #999;
+	*/
+}
+
+/**
+ * item detail populated in a modal
+ */
+
+#itemDetailContents {
+	display:block;
+	margin-top:8px;
+}
+
+.itemDetail .info {
+	display:block;
+	width:190px;
+	text-align:left;
+	margin:12px 30px;
+}
+
+.itemDetail .info .title {
+	display:block;
+	font-weight:700;
+	text-align:left;
+}
+
+.itemDetail .info .creator {
+	display:block;
+	font-weight:400;
+	font-size:13px;
+	text-align:left;
+	color:#999;
+}
+
+
+.itemDetail .info .description {
+	display:block;
+	text-align:left;
+	padding-top:4px;
+	font-size:12px;
+}
+
+.itemDetail img {
+	display:block;
+	width:180px; 
+	margin-left:30px;
+	padding:3px;
+	background:#fff; 
+	border:#ccc;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow:0px 0px 2px #999;
+}
+
+/**
+ * lean modal
+ * item detail within modal
+ */
+#lean_overlay {
+	position: fixed;
+	z-index:4;
+	top: 0px;
+	left: 0px;
+	height:100%;
+	width:100%;
+	background: #000;
+	display: none;
+}
+
+.modal_close { 
+	position:absolute; 
+	top:12px; 
+	right:12px; 
+	display:block; 
+	width:14px; 
+	height:14px; 
+	background-image:url("../images/modal_close.png");
+	background-size:14px 14px;
+	background-repeat:no-repeat;
+	z-index:2; 
+}
+
+.modal {
+	width:260px;
+	margin:0 12px; 
+	padding:28px 18px; 
+	display:none; 
+	background:rgba(19,19,19,1.0);
+	color:#fff;
+	font-size:12px;
+	text-align:left;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow:0px 0px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* iPhone5 landscape */
+@media only screen and (max-device-width: 568px) and (orientation: landscape) {
+	.item {
+		min-width:min-intrinsic;
+		width:auto;
+	}
+	
+	.item .info {
+		width:130px;
+		margin-left:13px;
+	}
+}
