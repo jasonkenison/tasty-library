@@ -10,6 +10,9 @@ Includes a single data/library.json file defining all shelves and data within th
 * Sort by list or search by title or creator
 * Browser tested in iPad, iPhone 5 and desktop browsers. Ideal viewing in iPhone 5
 
+Sample:
+http://jasonkenison.com/projects/tasty-library/
+
 leanModal v1.1 by Ray Stone
 http://finelysliced.com.au
 
