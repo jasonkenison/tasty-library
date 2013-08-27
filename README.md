@@ -18,3 +18,9 @@ http://finelysliced.com.au
 
 Lazy Load v1.8.5 by Mika Tuupola
 http://www.appelsiini.net/projects/lazyload
+
+Screenshots:
+
+![Tasty Library List View](/images/ss1.png "List View")
+
+![Tasty Library Item Detail](/images/ss2.png "Item Detail")
