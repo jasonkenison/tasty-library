@@ -17,15 +17,19 @@
 	<body>
 		<div class="filter">
 			<select id="shelves"></select>
+			<div class="toggleView">
+				<span id="viewAsIcon" class="fontawesome-th-large"></span>
+				<span id="viewAsList" class="fontawesome-th-list"></span>
+			</div>
 			<form id="searchForm" action="#"><input type="text" id="searchBox" class="searchBox" placeholder="Search items..." /></form>
 			<div id="searchNote"></div>
 		</div>
 		<br clear="all" />
 		
-		<div id="items"></div>
+		<div id="items" class=""></div>
 		
 		<div class="modal" id="itemDetail">
-			<a class="modal_close" href="#"></a>
+			<a class="modal_close"></a>
 			<div id="itemDetailContents"></div>
 		</div>
 		

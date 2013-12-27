@@ -23,7 +23,7 @@ $(document).ready(function(){
 		
 		// list all items in the first shelf
 		//firstShelf = $.fn.shelves[0].id; // first in the json data, or
-		firstShelf = ''; // show all
+		firstShelf = 'Vinyl'; // ''; //show all
 		$.fn.selectedShelf = firstShelf;
 		listItems(firstShelf);
 		
@@ -35,6 +35,15 @@ $(document).ready(function(){
 			}
 			return false;
 		});
+		
+		// default view
+		$.fn.viewAs = 'viewAsIcon';
+		setView($.fn.viewAs);
+		
+		// toggle button changes setView
+		$('.toggleView').click(function(){
+			setView();
+		});
 	});
 });
 
@@ -45,7 +54,7 @@ function listShelves(){
 	var options = '';
 	
 	// include option to show all
-	options += '<option value="">Show All</option>';
+	//options += '<option value="">Show All</option>';
 	
 	$.each($.fn.shelves, function (key, shelf) {
 		options += '<option value="' + shelf['id'] + '">' + shelf['title'] + '</option>';
@@ -239,3 +248,31 @@ function getItemById(id){
 		}
 	});
 }
+
+/**
+ * toggle view between icon (covers only) and list (cover in white block with details)
+ */
+function setView(viewId){
+	if(viewId){
+		$.fn.viewAs = viewId;
+	} else {
+		if($.fn.viewAs == 'viewAsIcon'){
+			$.fn.viewAs = 'viewAsList';
+		} else {
+			$.fn.viewAs = 'viewAsIcon';
+		}
+	}
+	
+	// remove selected class from both
+	$('#viewAsIcon').removeClass('selected');
+	$('#viewAsList').removeClass('selected');
+	
+	// add selected class to one
+	$('#' + $.fn.viewAs).addClass('selected');
+	
+	// toggle view classes
+	$('#items').attr('class', $.fn.viewAs);
+}
+
+
+

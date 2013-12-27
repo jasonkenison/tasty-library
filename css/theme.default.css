@@ -12,6 +12,12 @@
  * Version: 0.1
  */
 
+/* fontawesome */
+@import url("http://weloveiconfonts.com/api/?family=fontawesome");
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
 body {
 	background:rgba(142,142,147,0.9);
 	font-family:"Roboto Condensed", sans-serif;
@@ -68,7 +74,7 @@ input.searchBox {
 	border:0px;
 	background:#fff;
 	padding:4px 6px;
-	width:186px;
+	width:106px;
 	font-family:"Open Sans", sans-serif;
 	font-size:12px;
 	-webkit-border-radius: 3px;
@@ -92,12 +98,35 @@ div.error {
 	box-shadow:0px 0px 2px #000;
 }
 
+div.toggleView {
+	display:inline-block;
+	float:right;
+	padding:0px;
+	margin:0px;
+	margin-right:12px;
+	margin-top:-4px;
+}
+
+div.toggleView span {
+	color:#fff;
+	font-size:30px;
+	margin-left:4px;
+	opacity:0.4;
+}
+
+div.toggleView span.selected {
+	opacity:1;
+}
+
 /**
  * item listing
  */
 #items {
 	padding:6px;
 	margin-top:28px;
+}
+
+#items.viewAsList {
 }
 
 .item {
@@ -107,12 +136,11 @@ div.error {
 	min-height:150px;
 	width:auto;
 	background:#fff;
-	background-image: url("../images/item_bg_left.png"), url("../images/item_bg.png");
-	background-position: left top, left top;
-	background-repeat: repeat-y, repeat;
-	background-size: 106px 26px, 290px 36px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
+	background-image:url("../images/item_bg.png");
+	background-position:left top;
+	background-size:290px 36px;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;
 	border-radius: 3px;
 	box-shadow:0px 0px 2px #666;
 	text-align:center;
@@ -176,6 +204,32 @@ div.error {
 	box-shadow:0px 0px 2px #999;
 	*/
 }
+
+/**
+ * viewAsList styles above, alter for icon view below
+ */
+#items.viewAsIcon .item {
+	background:none;
+	min-width:142px;
+}
+
+#items.viewAsIcon .info {
+	display:none;
+}
+
+#items.viewAsIcon .item img {
+	display:block;
+	float:left;
+	width:142px;
+	padding:3px;
+	background:#fff; 
+	border:#ccc;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow:0px 0px 2px #999;
+}
+
 
 /**
  * item detail populated in a modal

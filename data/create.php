@@ -16,7 +16,7 @@
  */
 
 // omit output to include only specific shelves by name, or set to false to include all
-$shelvesToInclude = array('DVD Movies', 'Blu-Ray Movies', 'xbox360 Games');
+$shelvesToInclude = array('Vinyl', 'DVD Movies', 'HD DVD Movies', 'Blu-Ray Movies', 'xbox360 Games', 'PS3 Games', 'PC Games', 'Wii Games', 'DS/3DS Games', 'NES Games', 'Tech Books');
 //$shelvesToInclude = false;
 
 $connection = mysql_connect('localhost', 'root', 'root');
@@ -26,12 +26,15 @@ mysql_select_db('test');
 // line ending
 $le = "\n";
 
+$itemsAdded = array();
 $shelvesArray = array();
 $items = '';
 $shelves = '';
 $q = mysql_query("SELECT * FROM `library` ORDER BY `id` ASC");
 while($qd = mysql_fetch_assoc($q)){
-	if(is_array($shelvesToInclude) && in_array($qd['shelves'], $shelvesToInclude) || !$shelvesToInclude){
+	if(	((is_array($shelvesToInclude) && in_array($qd['shelves'], $shelvesToInclude)) || !$shelvesToInclude) && 
+		!in_array($qd['unique_key'], $itemsAdded)
+		){
 		$items .= '
 			{	
 			"id": "'.$qd['unique_key'].'",
@@ -44,6 +47,8 @@ while($qd = mysql_fetch_assoc($q)){
 			"type": "'.$qd['item_type'].'",
 			"shelf": "'.$qd['shelves'].'"
 		},'.$le;
+		
+		$itemsAdded[] = $qd['unique_key'];
 	}
 		
 	if(!in_array($qd['shelves'], $shelvesArray)){
