@@ -242,9 +242,9 @@ div.toggleView span.selected {
 
 .itemDetail .info {
 	display:block;
-	width:190px;
+	width:auto;
 	text-align:left;
-	margin:12px 30px;
+	margin:12px;
 }
 
 .itemDetail .info .title {
@@ -271,8 +271,9 @@ div.toggleView span.selected {
 
 .itemDetail img {
 	display:block;
-	width:180px; 
-	margin-left:30px;
+	max-width:230px;
+	max-height:280px; 
+	margin:0px 12px;
 	padding:3px;
 	background:#fff; 
 	border:#ccc;
@@ -311,7 +312,7 @@ div.toggleView span.selected {
 }
 
 .modal {
-	width:260px;
+	width:auto;
 	margin:0 12px; 
 	padding:28px 18px; 
 	display:none; 
